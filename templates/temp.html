@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+	<h1>The {{feed.feed.title}} feed</h1>
+	
+
+	
+		<ul>
+		
+		{% for entry in feed.entries %}
+		
+
+		<li><h2> {{entry.title}}</h2></li>
+		
+		<pre>{{entry.summary | safe }}</pre>
+
+
+		</ul>
+		
+	
+		{% endfor %}
+
+	
+
+
+</body>
+</html>
