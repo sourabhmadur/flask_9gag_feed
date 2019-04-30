@@ -12,21 +12,20 @@ d_dark_humor = feedparser.parse('https://9gag-rss.com/api/rss/get?code=9GAGDarkH
 
 d_fresh = feedparser.parse('https://9gag-rss.com/api/rss/get?code=9GAGFresh&format=2')
 
-rss_feeds = [d_awe, d_comic, d_dark_humor, d_fresh ]
+rss_feeds = {'awesome':d_awe, 'comic': d_comic, 'dark_humor': d_dark_humor, 'fresh':d_fresh }
 
 
 @app.route('/')
 def hello_world():
    
-   # return rss_feeds[0].entries[0].summary
     return render_template("postings.html",  feeds = rss_feeds )
     
 
 
-@app.route('/temp/<feed>')
-def temp(feed=0):
+@app.route('/genre/<feed>')
+def genre(feed='awesome'):
    
-    return render_template("temp.html",  feed = rss_feeds[int(feed)] )
+    return render_template("genre.html",  feed = rss_feeds[feed] )
 
 
 

@@ -3,28 +3,31 @@
 <head>
 	<title></title>
 	
+	<style>
+
+</style>
 </head>
 <body>
 	<h1>The {{feed.feed.title}} feed</h1>
 	
 
 	
-		<ul>
+		<ol>
 		
 		{% for entry in feed.entries %}
 		
 
-		<li><h2> {{entry.title}}</h2></li>
+		<li><h3 align="left"> {{entry.title}}</h3></li>
 		
-		<pre>{{entry.summary | safe }}</pre>
+		<div align="center">{{entry.summary | safe }}</div>
 
+		<hr>
 
-		</ul>
 		
 	
 		{% endfor %}
 
-	
+		</ol>ol>
 
 
 </body>
